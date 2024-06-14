@@ -1,49 +1,82 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* globals.css */
+
+/* globals.css */
+
+
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
-/* Hide scrollbar for Chrome, Safari and Opera */
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
+/* Define custom utilities */
+@layer utilities {
+  .bg-gray-25 {
+    background-color: #f8f9fa; /* Light gray color */
+  }
+  .text-black-2 {
+    color: #333; /* Replace with the actual color value */
+  }
 }
+ .shadow-creditCard {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+} 
+ @layer utilities {
+  .bg-gradient-mesh {
+    background: linear-gradient(to right, #ff7e5f, #feb47b); /* Example gradient */
+   }
+} 
 
-/* Hide scrollbar for IE, Edge and Firefox */
-.no-scrollbar {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-}
-.glassmorphism {
-  background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-}
 
-.custom-scrollbar::-webkit-scrollbar {
-  width: 3px;
-  height: 3px;
-  border-radius: 2px;
+/* Apply utilities to .sidebar-label */
+.sidebar-label {
+  @apply text-16 font-semibold text-black-2 max-xl:hidden;
 }
-
-.custom-scrollbar::-webkit-scrollbar-track {
-  background: #dddddd;
-}
-
-.custom-scrollbar::-webkit-scrollbar-thumb {
-  background: #5c5c7b;
-  border-radius: 50px;
+.bg-gradient-mesh{
+  background-image: url('/icons/gradient-mesh.svg');
 }
 
-.custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: #7878a3;
+
+.text-bankGradient {
+  color: dodgerblue;
 }
+
 
 @layer utilities {
+  .bg-gray-25 {
+    background-color: #f8f9fa; /* Light gray color */
+  }
+  @layer utilities {
+    .flex-center {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .size-24 {
+      width: 6rem;
+      height: 6rem;
+    }
+    .shadow-profile {
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+  }
+  @layer utilities {
+    .bg-bank-gradient {
+      background-image: linear-gradient(90deg,#0179FE 0%, #4893FF 100%); /* Example gradient */
+    }
+    .shadow-creditCard {
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Example shadow */
+    }
+  }
+  
+  
+  .shadow-chart {
+    @apply shadow-chart;
+  }
+  
   .input-class {
     @apply text-16 placeholder:text-16 rounded-lg border border-gray-300 text-gray-900 placeholder:text-gray-500;
   }
@@ -117,10 +150,6 @@
     @apply flex flex-col justify-between gap-8;
   }
 
-  .total-balance {
-    @apply flex w-full items-center gap-4 rounded-xl border border-gray-200 p-4 shadow-chart sm:gap-6 sm:p-6;
-  }
-
   .total-balance-chart {
     @apply flex size-full max-w-[100px] items-center sm:max-w-[120px];
   }
@@ -141,10 +170,6 @@
     @apply text-14 rounded-lg border border-gray-300 px-4 py-2.5 font-semibold text-gray-700;
   }
 
-  .recent-transactions {
-    @apply flex w-full flex-col gap-6;
-  }
-
   .recent-transactions-label {
     @apply text-20 md:text-24 font-semibold text-gray-900;
   }
@@ -153,11 +178,13 @@
     @apply custom-scrollbar mb-8 flex w-full flex-nowrap;
   }
 
-  /* Right sidebar */
-  .right-sidebar {
-    @apply no-scrollbar hidden h-screen max-h-screen flex-col border-l border-gray-200 xl:flex w-[355px] xl:overflow-y-scroll !important;
-  }
 
+   .right-sidebar {
+    @apply no-scrollbar hidden h-screen max-h-screen flex-col border-l border-gray-200 xl:flex w-[355px] xl:overflow-y-scroll !important;
+  } 
+  .profile-banner {
+    @apply h-[120px] w-full bg-gradient-mesh bg-cover bg-no-repeat;
+  }
   .profile-banner {
     @apply h-[120px] w-full bg-gradient-mesh bg-cover bg-no-repeat;
   }
@@ -191,7 +218,6 @@
     @apply flex h-screen max-h-screen w-full flex-col gap-8 bg-gray-25 p-8 xl:py-12;
   }
 
-  /* My Banks */
   .transactions {
     @apply flex max-h-screen w-full flex-col gap-8 overflow-y-scroll bg-gray-25 p-8 xl:py-12;
   }
@@ -368,15 +394,53 @@
     @apply sticky left-0 top-0 flex h-screen w-fit flex-col  justify-between border-r border-gray-200 bg-white pt-8 text-white max-md:hidden sm:p-4 xl:p-6 2xl:w-[355px];
   }
 
-  .sidebar-logo {
+  /* .sidebar-logo {
     @apply 2xl:text-26 font-ibm-plex-serif text-[26px] font-bold text-black-1 max-xl:hidden;
-  }
+  }  */
 
-  .sidebar-link {
+
+
+   .sidebar-link {
     @apply flex gap-3 items-center py-1 md:p-3 2xl:p-4 rounded-lg justify-center xl:justify-start;
-  }
+  } 
 
-  .sidebar-label {
+   .sidebar-label {
     @apply text-16 font-semibold text-black-2 max-xl:hidden;
   }
+} 
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.glassmorphism {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+  border-radius: 2px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #dddddd;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #5c5c7b;
+  border-radius: 50px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #7878a3;
 }
