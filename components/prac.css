@@ -1,0 +1,21 @@
+.container {
+    margin: 50px auto;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15), 0 0 10px rgba(0, 0, 0, 0.1);
+    transform: translateY(-10px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+.boxes{
+    position: relative;
+    left: 200px;
+    bottom: 100px;
+}
+/* .header-2{
+ font-size: x-large;
+} */
+.flex-flex-col-gap-2{
+    position: relative;
+    top: 20px;
+    left: 10px;
+}

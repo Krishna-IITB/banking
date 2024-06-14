@@ -1,0 +1,55 @@
+
+ @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;700&display=swap');
+
+
+.font-ibm-plex-serif {
+  font-family: 'IBM Plex Serif', serif;
+} 
+
+
+  .sidebar-logo {
+  font-size: 26px; /* Equivalent to text-[26px] 
+  font-family: 'IBM Plex Serif', serif; /* Equivalent to font-ibm-plex-serif */
+   font-weight: bold; 
+  color: #1a1a1a;   
+  }  
+
+
+      @media (max-width: 1279px) {
+   .sidebar-logo {
+    display: none;
+  }
+}  
+
+  /* Media query for 2xl:text-26 */  
+  @media (min-width: 1536px) {
+  .sidebar-logo {
+    font-size: 26px; 
+   }
+}  
+ .bg-bank-gradient{
+   color: white;
+   background-color: #2f91fa;
+   width: 160px;
+   border-radius: 10px;
+   
+} 
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    
+} 
+
+ /* .bg-bank-gradient {
+    color: white;
+    text-align: center;
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10%; 
+    border-radius: 10px;
+}   */
+
